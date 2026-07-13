@@ -1,0 +1,12 @@
+# Render manifest template — replace placeholders with your GitHub repo info
+# To use: rename to render.yaml and set `repo` to your GitHub "owner/repo" value.
+
+services:
+  - type: static
+    name: composio-case-study
+    repo: <github-username>/<repo-name>
+    branch: main
+    buildCommand: python research_agent.py
+    publishPath: site
+
+# If you prefer a Web Service instead of a static site, update 'type' and 'publishPath' accordingly.
