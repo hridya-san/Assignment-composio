@@ -1,67 +1,30 @@
 # AI Product Ops Take-Home Assignment
 
-This workspace contains a small research agent that turns the 100-app assignment into a single self-explanatory HTML case study.
+This repository contains the completed take-home assignment for the AI Product Ops role.
 
 ## What is included
-- A reproducible Python script that builds the research dataset and renders the page.
-- A generated HTML report at [site/index.html](site/index.html).
-- A JSON export at [site/research_results.json](site/research_results.json).
+- `research_agent.py` — builds the research dataset for the 100 apps and renders the case study page.
+- `site/index.html` — the final self-explanatory HTML case study.
+- `site/research_results.json` — the structured dataset behind the report.
+- `render.yaml.template` — optional Render manifest template for deployment.
+
+## What this project shows
+- A compact 100-app research matrix for auth, self-serve gating, API surface, and buildability.
+- A verified sample checklist that documents accuracy checks.
+- A reusable research agent script that generates the page from the dataset.
+
+## How it works
+1. `research_agent.py` contains the app dataset and report generation logic.
+2. Running the script builds the output into the `site` folder.
+3. `site/index.html` is the reviewer-facing case study with findings, patterns, and evidence links.
 
 ## Run locally
 ```bash
 python research_agent.py
 ```
 
-Then open [site/index.html](site/index.html) in a browser or serve the folder with:
+Then open `site/index.html` in a browser.
 
-```bash
-python -m http.server 8000
-```
-
-Then visit http://localhost:8000/site/index.html.
-
-## Deployment on Render
-1. Create a new Web Service in Render.
-2. Connect your repository to Render.
-3. Set the build command to:
-
-```bash
-python research_agent.py
-```
-
-4. Set the publish directory to:
-
-```bash
-site
-```
-
-5. Deploy the service.
-
-## What to submit
-- A live URL pointing to the deployed HTML page.
-- A link to this source repository.
-- This README documenting how to run the research agent locally.
-
-## Deploying to Render (quick guide)
-
-Option A — Manual (recommended if you control the repo):
-
-1. Push this repository to GitHub (create a repo named e.g. `composio-case-study`).
-2. In Render, create a new **Static Site** (or Web Service) and connect your GitHub repo.
-3. Set the build command to:
-
-```bash
-python research_agent.py
-```
-
-4. Set the publish directory to:
-
-```bash
-site
-```
-
-5. Deploy — Render will run the build, generate `site/`, and publish the static files.
-
-Option B — Ask me to push & deploy for you:
-
-- If you want me to push the repo and create the Render service, I can do that if you provide a GitHub personal access token (repo scope) and permission to create a repo, and optionally a Render API key. Reply with which option you prefer and I will proceed.
+## Notes
+- The generated site is self-contained and meant to be submitted as the review deliverable.
+- The code is designed to be easy to run and inspect without additional setup.
